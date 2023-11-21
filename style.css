@@ -22,4 +22,26 @@ footer {
     width: 100%;
 }
 
-/* Ajoutez plus de styles selon vos besoins */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+}
+
+.nav-logo img, .nav-github img {
+    height: 50px; /* ou la taille souhaitée */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
