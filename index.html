@@ -24,8 +24,8 @@
         </nav>
     </header>
     <main>
-        <section class="game-banner">
-            <h1>Welcome to Employee of The Month</h1>
+        <section class="game-banner" id="banner">
+            <h1>The Employee of The Month</h1>
             <p>Experience the thrill of the office from anywhere.</p>
             <a href="trailer.html" class="trailer-button">Watch the Trailer</a>
         </section>
@@ -33,7 +33,7 @@
             <div class="game-image">
                 <img src="images/board.png" alt="Aperçu du jeu Employee of The Month">
             </div>
-            <div class="game-description">
+            <div class="game-description" id="game-introduction">
                 <h2>Employee of The Month</h2>
                 <p>
                     <span class="icon"></span>
@@ -51,7 +51,7 @@
                 <img src="images/board.png" alt="Aperçu du jeu Employee of The Month">
             </div>
         </section>
-        <section class="home-game-intro">
+        <section style="box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" class="home-game-intro" id="mat">
             <div class="intro-content">
                 <h2>Recreate the Game at Home?</h2>
                 <p class="intro-text">Discover how you can bring the Employee of The Month experience into your home.</p>
@@ -59,30 +59,63 @@
                 <a href="build-it-at-home.html" class="home-game-button">Learn More</a>
             </div>     
         </section>
-        <section class="creators-section">
+        <h2 style="text-align: center;
+        font-size: 2em; /* Taille du titre */
+        margin-bottom: 30px; /* Espacement avant la liste des créateurs */
+        color: var(--text-dark); /* Couleur du titre, ajustez selon vos préférences */
+    ">The Team</h2> <!-- Titre de la section -->
+        <section class="creators-section" id="team">
             <div class="creator">
                 <img src="images/personne.png" alt="Nom Créateur 1">
                 <h3>Elisia Soumbou</h3>
-                <p>Bachelor 1</p>
+                <p>Web Marketing & social média bachelor</p>
                 <p>Courte description...</p>
+                <div style="display: inline-block;
+                width: 24px;
+                height: 24px;">
+                <a href="https://www.linkedin.com/in/elisia-soumbou" target="_blank">
+                    <img src="images/linkedin_icon.png" alt="LinkedIn" class="linkedin-icon">
+                </a>
+            </div>
             </div>
             <div class="creator">
                 <img src="images/personne.png" alt="Nom Créateur 2">
                 <h3>Hugo Lemattre</h3>
-                <p>Bachelor 2</p>
+                <p>e-commerce bachelor</p>
                 <p>Courte description...</p>
+                <div style="display: inline-block;
+                width: 24px;
+                height: 24px;">
+                <a href="https://www.linkedin.com/in/hugo-lemattre" target="_blank">
+                    <img src="images/linkedin_icon.png" alt="LinkedIn" class="linkedin-icon">
+                </a>
+                </div>
             </div>
             <div class="creator">
                 <img src="images/personne.png" alt="Nom Créateur 3">
                 <h3>Vianney Basquin</h3>
-                <p>Bachelor 3</p>
+                <p>Web Developer Bachelor</p>
                 <p>Courte description...</p>
+                <div style="display: inline-block;
+                width: 24px;
+                height: 24px;">
+                <a href="https://www.linkedin.com/in/vianney-basquin-173358220/" target="_blank">
+                    <img src="images/linkedin_icon.png" alt="LinkedIn" class="linkedin-icon">
+                </a>
+            </div>
             </div>
             <div class="creator">
                 <img src="images/personne.png" alt="Nom Créateur 4">
                 <h3>Lucas Madranges</h3>
-                <p>Bachelor 4</p>
+                <p>Web Developer Bachelor</p>
                 <p>Courte description...</p>
+                <div style="display: inline-block;
+                width: 24px;
+                height: 24px;">
+                <a href="https://www.linkedin.com/in/lucas-madranges" target="_blank">
+                    <img src="images/linkedin_icon.png" alt="LinkedIn" class="linkedin-icon">
+                </a>
+            </div>
             </div>
         </section>
         
@@ -90,8 +123,28 @@
 
     </main>
     <footer>
-        <p>&copy; 2023 Employee of The Month Team</p>
+        <div class="footer-section">
+            <div class="footer-links">
+                <a href="#banner">Go up</a>
+                <a href="#game-introduction">Game introduction</a>
+                <a href="#mat">Material</a>
+                <a href="#team">The team</a>
+                <!-- Autres liens de section -->
+            </div>
+    
+            <div class="footer-logo">
+                <img src="images/VELH_logo.png" alt="Logo Employee of The Month">
+            </div>
+    
+            <div class="footer-page-links">
+                <a href="index.html">HomePage</a>
+                <a href="material.html">Matériel</a>
+                <a href="application.html">Application</a>
+            </div>
+        </div>
     </footer>
+    
+    
     <script src="script.js"></script>
 </body>
 </html>

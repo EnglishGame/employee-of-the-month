@@ -23,13 +23,44 @@ header {
 }
 
 footer {
-    background-color: var(--green);
+    background-color: var(--text-dark); /* Ou toute autre couleur de fond */
     color: white;
-    text-align: center;
-    padding: 10px 0;
-    bottom: 0;
-    width: 100%;
+    padding: 20px 0;
 }
+
+.footer-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-links a, .footer-page-links a {
+    color: white; /* Changement de la couleur du texte */
+    text-decoration: none;
+    margin: 0 10px; /* Espacement autour des liens */
+}
+
+.footer-links a:hover, .footer-page-links a:hover {
+    text-decoration: underline; /* Style au survol, optionnel */
+}
+
+.footer-logo img {
+    max-width: 100px; /* Taille ajustable du logo */
+}
+
+/* Responsive design pour les petits écrans */
+@media (max-width: 768px) {
+    .footer-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links, .footer-page-links {
+        margin: 10px 0;
+    }
+}
+
 
 nav {
     display: flex;
@@ -129,23 +160,39 @@ nav {
 }
 
 .game-banner {
-    background: url('images/board_game.jpg') no-repeat center center;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.2), /* Couche noire avec opacité de 30% */
+        rgba(0, 0, 0, 0.2)  /* Répétez la même couleur pour un effet uniforme */
+    ),
+    url('images/bg_website.png') no-repeat center center; /* Image de fond */
     background-size: cover;
     text-align: center;
     padding: 50px 20px;
     color: white;
+    position: relative;
 }
+
+
+.game-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Couche noire avec une opacité de 30% */
+    z-index: -1; /* Assure que le contenu de la bannière reste cliquable */
+}
+
 
 .game-banner h1 {
     font-size: 2.5em;
     margin-bottom: 0.5em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Améliore la lisibilité sur des images */
 }
 
 .game-banner p {
     font-size: 1.5em;
     margin-bottom: 1em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .trailer-button {
@@ -250,9 +297,192 @@ nav {
     font-size: 14px;
 }
 
+.creator a {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Ajout d'une classe spécifique pour l'icône LinkedIn */
+.linkedin-icon {
+    width: 20px; /* Taille ajustée de l'icône */
+    height: auto;
+    display: block; /* ou 'inline-block' selon le besoin */
+    margin: 5px auto; /* Centrage et espacement de l'icône */
+}
+
+/* Style au survol pour l'icône LinkedIn */
+.linkedin-icon:hover {
+    opacity: 0.8;
+}
+
+
+
 /* Responsive design pour les petits écrans */
 @media (max-width: 768px) {
     .creators-section {
         grid-template-columns: 1fr; /* Une colonne sur les petits écrans */
     }
 }
+
+/* Page 2 */
+
+.players-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+    gap: 20px; /* Espacement entre les cartes */
+    padding: 40px;
+}
+
+/* Mise en page et style des cartes des joueurs */
+.player {
+    background-color: #f9f9f9; /* Une couleur de fond plus douce */
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+    padding: 15px; /* Ajustement du padding intérieur */
+    height: auto; /* Hauteur automatique pour s'adapter au contenu */
+}
+
+.player:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Style des images des joueurs */
+.player-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 10px 0;
+    transition: transform 0.3s ease;
+    margin: 10px auto; /* Ajustement de la marge */
+}
+
+.player-image:hover {
+    transform: rotate(360deg);
+}
+
+/* Style des champs de saisie du nom du joueur */
+.player-name {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    text-align: center;
+    transition: border-color 0.3s ease;
+    font-size: 1em; /* Ajustement de la taille de la police */
+    margin: 10px auto; /* Ajustement de la marge */
+}
+
+.player-name:focus {
+    border-color: var(--blue);
+}
+
+.points-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.points-control button {
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    padding: 10px 15px; /* Augmente le padding pour de plus grands boutons */
+    font-size: 1.5em; /* Augmente la taille de la police pour les boutons */
+    cursor: pointer;
+    margin: 0 10px; /* Ajuste l'espacement entre les boutons et le compteur de points */
+    border-radius: 50%; /* Boutons circulaires */
+    transition: background-color 0.2s ease; /* Transition pour l'effet au survol */
+    padding: 10px; /* Ajustement du padding pour un bouton de taille modérée */
+    font-size: 1.2em; /* Ajustement de la taille de la police */
+
+}
+.points-control .minus {
+    border-radius: 50%; /* Bouton circulaire */
+}
+
+.points-control .plus {
+    border-radius: 50%; /* Bouton circulaire */
+}
+
+.points-control button:hover {
+    background-color: var(--green); /* Couleur au survol */
+}
+
+.points {
+    min-width: 60px; /* Ajuste la largeur minimum pour le compteur */
+    text-align: center;
+    border: 1px solid #ddd; /* Bordure pour l'esthétique */
+    border-radius: 10px; /* Bordures légèrement arrondies */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease; /* Transition pour l'effet au survol */
+    padding: 5px 15px; /* Ajustement du padding */
+    font-size: 1.4em; /* Ajustement de la taille de la police */
+
+}
+
+.points:hover {
+    background-color: #f2f2f2; /* Couleur de fond au survol pour le compteur de points */
+}
+
+/* Responsive design pour une colonne sur les petits écrans */
+@media (max-width: 768px) {
+    .players-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+.game-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    gap: 20px;
+}
+
+.game-buttons button {
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.game-buttons button:hover {
+    background-color: var(--green);
+}
+
+/* Assurez-vous que vos boutons ne sont pas trop larges pour éviter qu'ils ne débordent */
+@media (max-width: 768px) {
+    .game-buttons {
+        flex-direction: column;
+    }
+}
+
+.warning-message {
+    background-color: #ffcc00; /* Couleur de fond jaune pour l'attention */
+    color: #333; /* Couleur du texte */
+    text-align: center; /* Alignement du texte */
+    padding: 10px; /* Espacement interne */
+    border-radius: 5px; /* Bordures arrondies pour un look doux */
+    margin: 10px; /* Marge externe pour séparer des autres éléments */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre légère pour le relief */
+}
+
+.warning-message p {
+    margin: 0; /* Aucune marge supplémentaire pour le paragraphe */
+    font-weight: bold; /* Texte en gras pour l'importance */
+}
+

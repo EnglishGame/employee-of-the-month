@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee of The Month - Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-logo">
+                <img src="images/VELH_logo.png" alt="Logo Employee of The Month">
+            </div>
+            <div class="nav-links">
+                <a href="index.html">HomePage</a>
+                <a href="material.html">Material</a>
+                <a href="application.html">Application</a>
+            </div>
+            <div class="nav-github">
+                <a href="https://github.com/EnglishGame/employee-of-the-month" target="_blank">
+                    <img src="images/GitHub-logo.png" alt="GitHub">
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="warning-message">
+            <p>Warning: Do not refresh the page to avoid losing progress on the score.</p>
+        </div>
+        <section class="players-section" id="game">
+            <div class="player">
+                <img src="images/personne.png" alt="Joueur 1" class="player-image">
+                <input type="text" placeholder="Enter gamer name" class="player-name">
+                <p class="job">Job</p>
+                <div class="points-control">
+                    <button class="minus">-</button>
+                    <span class="points">0</span>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+            <div class="player">
+                <img src="images/personne.png" alt="Joueur 1" class="player-image">
+                <input type="text" placeholder="Enter gamer name" class="player-name">
+                <p class="job">Job</p>
+                <div class="points-control">
+                    <button class="minus">-</button>
+                    <span class="points">0</span>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+        </section>
+        <section class="game-buttons">
+            <button id="teamButton">Random 2v2</button>
+            <button id="jobButton">Assign Jobs</button>
+            <button id="threeVoneButton">Random 3v1</button>
+        </section>
+            <section class="players-section">
+            <div class="player">
+                <img src="images/personne.png" alt="Joueur 1" class="player-image">
+                <input type="text" placeholder="Enter gamer name" class="player-name">
+                <p class="job">Job</p>
+                <div class="points-control">
+                    <button class="minus">-</button>
+                    <span class="points">0</span>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+            <div class="player">
+                <img src="images/personne.png" alt="Joueur 1" class="player-image">
+                <input type="text" placeholder="Enter gamer name" class="player-name">
+                <p class="job">Job</p>
+                <div class="points-control">
+                    <button class="minus">-</button>
+                    <span class="points">0</span>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+            <!-- Répétez pour les autres joueurs -->
+        </section>
+        <!-- Autres contenus de la page Application -->
+    </main>
+    
+
+    <footer>
+        <div class="footer-section">
+            <div class="footer-links">
+                <a href="#game">Go up</a>
+            </div>
+    
+            <div class="footer-logo">
+                <img src="images/VELH_logo.png" alt="Logo Employee of The Month">
+            </div>
+    
+            <div class="footer-page-links">
+                <a href="index.html">HomePage</a>
+                <a href="material.html">Material</a>
+                <a href="application.html">Application</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="score-handler.js"></script>
+    <script src="adjusted-game-handler.js"></script>
+</body>
+
+</html>
