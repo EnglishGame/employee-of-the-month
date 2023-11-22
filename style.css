@@ -1,23 +1,32 @@
+:root {
+    --yellow: #F4D03F;
+    --blue: #5DADE2;
+    --pink: #F5B7B1;
+    --green: #58D68D;
+    --text-grey: #515A5A;
+    --text-dark: #2C3E50;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: white;
+    color: var(--text-dark);
 }
 
 header {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
+    background-color: white;
+    color: var(--text-dark);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre subtile pour la profondeur */
 }
 
 footer {
-    background-color: #333;
+    background-color: var(--green);
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
     bottom: 0;
     width: 100%;
 }
@@ -27,21 +36,223 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #333;
-    color: white;
 }
 
-.nav-logo img, .nav-github img {
-    height: 50px; /* ou la taille souhaitée */
+.nav-logo img {
+    height: 50px;
 }
 
 .nav-links a {
-    color: white;
+    color: var(--text-dark);
     text-decoration: none;
     margin: 0 15px;
     font-size: 18px;
+    font-weight: bold; /* Police en gras pour un impact visuel */
+    transition: all 0.3s ease;
 }
 
-.nav-links a:hover {
-    text-decoration: underline;
+.nav-links a:hover, .nav-links a:focus {
+    color: var(--blue);
+    transform: translateY(-2px); /* Légère élévation lors du survol */
+}
+
+
+.nav-github img {
+    height: 30px;
+    filter: grayscale(100%); /* Icône GitHub en noir et blanc pour le minimalisme */
+}
+
+.nav-github img:hover, .nav-github img:focus {
+    filter: none; /* L'icône reprend ses couleurs originales au survol */
+}
+
+.game-introduction {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 40px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour séparer la section du reste du contenu */
+    margin: 20px 0; /* Espacement autour de la section */
+}
+
+.game-image img {
+    width: 100%; /* Taille de l'image ajustable selon vos besoins */
+    max-width: 300px; /* Pour éviter que l'image ne soit trop grande */
+    height: auto;
+}
+
+.game-description {
+    width: 50%; /* Utilise l'autre moitié de l'espace */
+}
+
+.game-description h2 {
+    animation: popIn 0.5s ease-out forwards;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); }
+    80% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+
+.game-description p {
+    font-size: 16px;
+    line-height: 1.6; /* Améliore la lisibilité du paragraphe */
+    color: var(--text-grey);
+    margin: -10px;
+}
+
+/* Responsive design pour les petits écrans */
+@media (max-width: 768px) {
+    .game-introduction {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .game-image, .game-description {
+        width: 100%;
+    }
+
+    .game-image img {
+        margin-bottom: 20px; /* Ajoute de l'espace entre l'image et le texte sur les petits écrans */
+    }
+}
+
+.icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url('images/icon.png');
+    background-size: cover;
+    margin-right: 8px;
+}
+
+.game-banner {
+    background: url('images/board_game.jpg') no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    padding: 50px 20px;
+    color: white;
+}
+
+.game-banner h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Améliore la lisibilité sur des images */
+}
+
+.game-banner p {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.trailer-button {
+    padding: 10px 20px;
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.trailer-button:hover {
+    background-color: var(--yellow);
+    cursor: pointer;
+}
+
+.home-game-intro {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: white;
+    transition: background-color 0.3s ease;
+    position: relative; /* S'assure que les enfants en position absolue sont positionnés par rapport à ce conteneur */
+}
+
+
+.home-game-intro:hover {
+    background-color: var(--yellow); /* Changement de couleur au survol */
+}
+
+.intro-content {
+    position: relative; /* Positionne les textes par rapport à ce div */
+}
+
+.intro-text, .intro-hover-text {
+    transition: opacity 0.3s ease;
+    position: absolute; /* Les positionne de manière absolue dans le div 'intro-content' */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /* Assure que le texte est centré correctement */
+    text-align: center;
+    opacity: 0;
+    margin-top: 40px;
+    visibility: hidden; /* Cache le texte initialement */
+}
+
+.intro-text {
+    opacity: 1;
+    visibility: visible; /* Rend le texte initial visible par défaut */
+}
+
+.home-game-intro:hover .intro-text {
+    opacity: 0;
+    visibility: hidden; /* Cache le texte initial au survol */
+}
+
+.home-game-intro:hover .intro-hover-text {
+    opacity: 1;
+    visibility: visible; /* Rend le texte de survol visible */
+}
+
+.home-game-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--blue);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.home-game-button:hover {
+    background-color: var(--green);
+}
+
+.creators-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+    gap: 20px; /* Espacement entre les éléments de la grille */
+    padding: 40px;
+    text-align: center; /* Centrage du texte */
+}
+
+.creator img {
+    width: 100%; /* Taille de l'image */
+    max-width: 200px; /* Largeur maximale pour ne pas que l'image soit trop grande */
+    margin: 0 auto; /* Centrage de l'image */
+    border-radius: 50%; /* Images rondes */
+}
+
+.creator h3 {
+    margin: 10px 0; /* Espacement autour du nom */
+}
+
+/* Styles supplémentaires pour le texte, les diplômes et les descriptions */
+.creator p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Responsive design pour les petits écrans */
+@media (max-width: 768px) {
+    .creators-section {
+        grid-template-columns: 1fr; /* Une colonne sur les petits écrans */
+    }
 }
