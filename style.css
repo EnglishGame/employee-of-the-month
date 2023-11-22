@@ -26,40 +26,52 @@ footer {
     background-color: var(--text-dark); /* Ou toute autre couleur de fond */
     color: white;
     padding: 20px 0;
+    text-align: center; /* Centre le contenu du footer */
 }
 
 .footer-section {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
+    flex-direction: column; /* Empile les éléments verticalement */
+    align-items: center; /* Centre les éléments horizontalement */
+}
+
+.footer-links, .footer-page-links {
+    margin: 10px 0;
 }
 
 .footer-links a, .footer-page-links a {
-    color: white; /* Changement de la couleur du texte */
+    color: white;
     text-decoration: none;
-    margin: 0 10px; /* Espacement autour des liens */
+    margin: 0 10px;
 }
 
 .footer-links a:hover, .footer-page-links a:hover {
-    text-decoration: underline; /* Style au survol, optionnel */
+    text-decoration: underline;
 }
 
 .footer-logo img {
     max-width: 100px; /* Taille ajustable du logo */
+    margin-bottom: 10px; /* Espacement sous le logo */
 }
 
-/* Responsive design pour les petits écrans */
-@media (max-width: 768px) {
+/* Ajustements pour les grands écrans */
+@media (min-width: 768px) {
     .footer-section {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     .footer-links, .footer-page-links {
-        margin: 10px 0;
+        flex: 1; /* Permet aux liens de prendre de l'espace */
+        display: flex;
+        justify-content: space-around; /* Espacement égal entre les liens */
+    }
+
+    .footer-logo {
+        flex: 0; /* Empêche le logo de grandir */
     }
 }
+
 
 
 nav {
@@ -486,3 +498,68 @@ nav {
     font-weight: bold; /* Texte en gras pour l'importance */
 }
 
+.materials-main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.materials-intro h1 {
+    color: #5DADE2; /* Blue color for the title */
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.materials-intro p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #515A5A; /* Dark grey color for the text */
+}
+
+.material-item {
+    border: 1px dashed #5DADE2; /* Dashed border with the theme blue color */
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9; /* Light background for the material sections */
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.material-item h2 {
+    color: #2C3E50; /* Darker blue for the section titles */
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.material-item p {
+    font-size: 1em;
+    color: #7f8c8d; /* Soft grey color for the description */
+    margin-bottom: 15px;
+}
+
+.material-link {
+    padding: 10px 20px;
+    background-color: #58D68D; /* Green color for the download links */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.material-link:hover, .material-link:focus {
+    background-color: #45B39D; /* Darker green for the hover state */
+    text-decoration: none;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .materials-main {
+        padding: 10px;
+    }
+
+    .material-item {
+        margin: 10px 0;
+    }
+}
