@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', (event) => {
     const players = document.querySelectorAll('.player');
 
@@ -9,13 +8,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         minusButton.addEventListener('click', () => {
             let currentScore = parseInt(score.textContent, 10);
-            currentScore = currentScore > 0 ? currentScore - 1 : 0;
+            if (currentScore > 0) {
+                currentScore--;
+            } else {
+                // Show an alert if the score is already zero
+                alert("Cannot go below zero!");
+            }
             score.textContent = currentScore;
         });
 
         plusButton.addEventListener('click', () => {
             let currentScore = parseInt(score.textContent, 10);
-            score.textContent = currentScore + 1;
+            currentScore++;
+            score.textContent = currentScore;
         });
     });
 });
