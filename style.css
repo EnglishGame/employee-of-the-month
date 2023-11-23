@@ -1,3 +1,4 @@
+/* Root Variables */
 :root {
     --yellow: #F4D03F;
     --blue: #5DADE2;
@@ -7,89 +8,30 @@
     --text-dark: #2C3E50;
 }
 
-html, body {
-    height: 100%; /* Assurez-vous que la hauteur de la page est de 100% */
-    margin: 0; /* Réinitialise les marges par défaut */
+/* Global Styles */
+html, body, main {
+    height: 100%;
+    margin: 0;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: white;
-    color: var(--text-dark);
-    display: flex; /* Utilisez flexbox pour la disposition de la page */
-    flex-direction: column; /* Les éléments sont empilés verticalement */
-    min-height: 100%; /* La hauteur minimale est la hauteur de la fenêtre du navigateur */
 }
 
+/* Header Styles */
 header {
     background-color: white;
     color: var(--text-dark);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre subtile pour la profondeur */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-footer {
-    background-color: var(--text-dark);
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.footer-section {
-    display: flex;
-    flex-direction: column; /* Keep it stacked vertically on mobile */
-    align-items: center;
-    /* Add your existing styles for .footer-section here */
-}
-
-/* Styles adjustments for larger screens */
-@media (min-width: 768px) {
-    .footer-section {
-        flex-direction: row; /* Align footer elements horizontally */
-        justify-content: space-between; /* Distribute space between elements */
-    }
-}
-
-.footer-links, .footer-page-links {
-    margin: 10px 0;
-}
-
-.footer-links a, .footer-page-links a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.footer-links a:hover, .footer-page-links a:hover {
-    text-decoration: underline;
-}
-
-.footer-logo img {
-    max-width: 100px; /* Taille ajustable du logo */
-    margin-bottom: 10px; /* Espacement sous le logo */
-}
-
-/* Ajustements pour les grands écrans */
-@media (min-width: 768px) {
-    .footer-section {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .footer-links, .footer-page-links {
-        flex: 1; /* Permet aux liens de prendre de l'espace */
-        display: flex;
-        justify-content: space-around; /* Espacement égal entre les liens */
-    }
-
-    .footer-logo {
-        flex: 0; /* Empêche le logo de grandir */
-    }
-}
-
-
 
 nav {
     display: flex;
@@ -107,42 +49,42 @@ nav {
     text-decoration: none;
     margin: 0 15px;
     font-size: 18px;
-    font-weight: bold; /* Police en gras pour un impact visuel */
+    font-weight: bold;
     transition: all 0.3s ease;
 }
 
 .nav-links a:hover, .nav-links a:focus {
     color: var(--blue);
-    transform: translateY(-2px); /* Légère élévation lors du survol */
+    transform: translateY(-2px);
 }
-
 
 .nav-github img {
     height: 30px;
-    filter: grayscale(100%); /* Icône GitHub en noir et blanc pour le minimalisme */
+    filter: grayscale(100%);
 }
 
 .nav-github img:hover, .nav-github img:focus {
-    filter: none; /* L'icône reprend ses couleurs originales au survol */
+    filter: none;
 }
 
+/* Game Introduction Styles */
 .game-introduction {
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 40px 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour séparer la section du reste du contenu */
-    margin: 20px 0; /* Espacement autour de la section */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
 }
 
 .game-image img {
-    width: 100%; /* Taille de l'image ajustable selon vos besoins */
-    max-width: 300px; /* Pour éviter que l'image ne soit trop grande */
+    width: 100%;
+    max-width: 300px;
     height: auto;
 }
 
 .game-description {
-    width: 50%; /* Utilise l'autre moitié de l'espace */
+    width: 50%;
 }
 
 .game-description h2 {
@@ -155,15 +97,22 @@ nav {
     100% { transform: scale(1); }
 }
 
-
 .game-description p {
     font-size: 16px;
-    line-height: 1.6; /* Améliore la lisibilité du paragraphe */
+    line-height: 1.6;
     color: var(--text-grey);
     margin: -10px;
 }
 
-/* Responsive design pour les petits écrans */
+.cratorimg {
+    display: inline-block;
+width: 60%;
+margin: 0 auto;
+border-radius: 20%;
+                margin: 0 auto; /* Centrage de l'image */
+                object-fit: cover; /* S'assure que l'image couvre complètement la zone sans être déformée */
+}
+/* Responsive Design for Game Introduction */
 @media (max-width: 768px) {
     .game-introduction {
         flex-direction: column;
@@ -175,32 +124,22 @@ nav {
     }
 
     .game-image img {
-        margin-bottom: 20px; /* Ajoute de l'espace entre l'image et le texte sur les petits écrans */
+        margin-bottom: 20px;
     }
 }
 
-.icon {
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    background-image: url('images/icon.png');
-    background-size: cover;
-    margin-right: 8px;
-}
-
+/* Banner Styles */
 .game-banner {
     background: linear-gradient(
-        rgba(0, 0, 0, 0.2), /* Couche noire avec opacité de 30% */
-        rgba(0, 0, 0, 0.2)  /* Répétez la même couleur pour un effet uniforme */
-    ),
-    url('images/bg_website.png') no-repeat center center; /* Image de fond */
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2)
+    ), url('images/bg_website.png') no-repeat center center;
     background-size: cover;
     text-align: center;
     padding: 50px 20px;
     color: white;
     position: relative;
 }
-
 
 .game-banner::before {
     content: '';
@@ -209,10 +148,9 @@ nav {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3); /* Couche noire avec une opacité de 30% */
-    z-index: -1; /* Assure que le contenu de la bannière reste cliquable */
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
 }
-
 
 .game-banner h1 {
     font-size: 2.5em;
@@ -241,52 +179,52 @@ nav {
     cursor: pointer;
 }
 
+/* Home Game Intro Styles */
 .home-game-intro {
     text-align: center;
     padding: 40px 20px;
     background-color: white;
     transition: background-color 0.3s ease;
-    position: relative; /* S'assure que les enfants en position absolue sont positionnés par rapport à ce conteneur */
-}
-
-
-.home-game-intro:hover {
-    background-color: var(--yellow); /* Changement de couleur au survol */
-}
-
-.intro-content {
-    position: relative; /* Positionne les textes par rapport à ce div */
-}
-
-.intro-text, .intro-hover-text {
+    position: relative;
+    }
+    
+    .home-game-intro:hover {
+    background-color: var(--yellow);
+    }
+    
+    .intro-content {
+    position: relative;
+    }
+    
+    .intro-text, .intro-hover-text {
     transition: opacity 0.3s ease;
-    position: absolute; /* Les positionne de manière absolue dans le div 'intro-content' */
+    position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%; /* Assure que le texte est centré correctement */
+    width: 100%;
     text-align: center;
     opacity: 0;
     margin-top: 40px;
-    visibility: hidden; /* Cache le texte initialement */
-}
-
-.intro-text {
+    visibility: hidden;
+    }
+    
+    .intro-text {
     opacity: 1;
-    visibility: visible; /* Rend le texte initial visible par défaut */
-}
-
-.home-game-intro:hover .intro-text {
+    visibility: visible;
+    }
+    
+    .home-game-intro:hover .intro-text {
     opacity: 0;
-    visibility: hidden; /* Cache le texte initial au survol */
-}
-
-.home-game-intro:hover .intro-hover-text {
+    visibility: hidden;
+    }
+    
+    .home-game-intro:hover .intro-hover-text {
     opacity: 1;
-    visibility: visible; /* Rend le texte de survol visible */
-}
-
-.home-game-button {
+    visibility: visible;
+    }
+    
+    .home-game-button {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
@@ -295,76 +233,70 @@ nav {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-}
-
-.home-game-button:hover {
+    }
+    
+    .home-game-button:hover {
     background-color: var(--green);
-}
-
-.creators-section {
+    }
+    
+    /* Creators Section Styles */
+    .creators-section {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
-    gap: 20px; /* Espacement entre les éléments de la grille */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     padding: 40px;
-    text-align: center; /* Centrage du texte */
-}
-
-.creator img {
-    width: 100%; /* Taille de l'image */
-    max-width: 200px; /* Largeur maximale pour ne pas que l'image soit trop grande */
-    margin: 0 auto; /* Centrage de l'image */
-    border-radius: 50%; /* Images rondes */
-}
-
-.creator h3 {
-    margin: 10px 0; /* Espacement autour du nom */
-}
-
-/* Styles supplémentaires pour le texte, les diplômes et les descriptions */
-.creator p {
+    text-align: center;
+    }
+    
+    .creator img {
+    width: 75%;
+    max-width: 130px;
+    margin: 0 auto;
+    border-radius: 40%;
+    }
+    
+    .creator h3 {
+    margin: 10px 0;
+    }
+    
+    .creator p {
     color: #666;
     font-size: 14px;
-}
-
-.creator a {
+    }
+    
+    .creator a {
     display: inline-block;
     margin-top: 10px;
-}
-
-/* Ajout d'une classe spécifique pour l'icône LinkedIn */
-.linkedin-icon {
-    width: 20px; /* Taille ajustée de l'icône */
-    height: auto;
-    display: block; /* ou 'inline-block' selon le besoin */
-    margin: 5px auto; /* Centrage et espacement de l'icône */
-}
-
-/* Style au survol pour l'icône LinkedIn */
-.linkedin-icon:hover {
-    opacity: 0.8;
-}
-
-
-
-/* Responsive design pour les petits écrans */
-@media (max-width: 768px) {
-    .creators-section {
-        grid-template-columns: 1fr; /* Une colonne sur les petits écrans */
     }
-}
-
-/* Page 2 */
-
-.players-section {
+    
+    .linkedin-icon {
+    width: 20px;
+    height: auto;
+    display: block;
+    margin: 5px auto;
+    }
+    
+    .linkedin-icon:hover {
+    opacity: 0.8;
+    }
+    
+    @media (max-width: 768px) {
+    .creators-section {
+    grid-template-columns: 1fr;
+    }
+    }
+    
+    /* Player Section Styles */
+    .players-section {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
-    gap: 20px; /* Espacement entre les cartes */
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
     padding: 40px;
-}
-
-/* Mise en page et style des cartes des joueurs */
-.player {
-    background-color: #f9f9f9; /* Une couleur de fond plus douce */
+    justify-items: center
+    }
+    
+    .player {
+    background-color: #f9f9f9;
     border-radius: 15px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -373,210 +305,311 @@ nav {
     align-items: center;
     justify-content: space-between;
     transition: transform 0.3s ease;
-    padding: 15px; /* Ajustement du padding intérieur */
-    height: auto; /* Hauteur automatique pour s'adapter au contenu */
-}
-
-.player:hover {
+    padding: 15px;
+    height: auto;
+    }
+    
+    .player:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Style des images des joueurs */
-.player-image {
+    }
+    
+    .player-image {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     margin: 10px 0;
     transition: transform 0.3s ease;
-    margin: 10px auto; /* Ajustement de la marge */
-}
-
-.player-image:hover {
+    }
+    
+    .player-image:hover {
     transform: rotate(360deg);
-}
-
-/* Style des champs de saisie du nom du joueur */
-.player-name {
+    }
+    
+    .player-name {
     margin: 10px 0;
     padding: 10px;
     border-radius: 15px;
     border: 1px solid transparent;
     text-align: center;
     transition: border-color 0.3s ease;
-    font-size: 1em; /* Ajustement de la taille de la police */
-    margin: 10px auto; /* Ajustement de la marge */
-}
-
-.player-name:focus {
+    font-size: 1em;
+    margin: 10px auto;
+    }
+    
+    .player-name:focus {
     border-color: var(--blue);
-}
-
-.points-control {
+    }
+    
+    .points-control {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 10px;
-}
-
-.points-control button {
+    }
+    
+    .points-control button {
     background-color: var(--blue);
     color: white;
     border: none;
-    padding: 10px 15px; /* Augmente le padding pour de plus grands boutons */
-    font-size: 1.5em; /* Augmente la taille de la police pour les boutons */
+    padding: 10px 15px;
+    font-size: 1.5em;
     cursor: pointer;
-    margin: 0 10px; /* Ajuste l'espacement entre les boutons et le compteur de points */
-    border-radius: 50%; /* Boutons circulaires */
-    transition: background-color 0.2s ease; /* Transition pour l'effet au survol */
-    padding: 10px; /* Ajustement du padding pour un bouton de taille modérée */
-    font-size: 1.2em; /* Ajustement de la taille de la police */
-
-}
-.points-control .minus {
-    border-radius: 50%; /* Bouton circulaire */
-}
-
-.points-control .plus {
-    border-radius: 50%; /* Bouton circulaire */
-}
-
-.points-control button:hover {
-    background-color: var(--green); /* Couleur au survol */
-}
-
-.points {
-    min-width: 60px; /* Ajuste la largeur minimum pour le compteur */
+    margin: 0 10px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+    }
+    
+    .points-control .minus {
+    border-radius: 50%;
+    }
+    
+    .points-control .plus {
+    border-radius: 50%;
+    }
+    
+    .points-control button:hover {
+    background-color: var(--green);
+    }
+    
+    .points {
+    min-width: 60px;
     text-align: center;
-    border: 1px solid #ddd; /* Bordure pour l'esthétique */
-    border-radius: 10px; /* Bordures légèrement arrondies */
+    border: 1px solid #ddd;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.2s ease; /* Transition pour l'effet au survol */
-    padding: 5px 15px; /* Ajustement du padding */
-    font-size: 1.4em; /* Ajustement de la taille de la police */
+    transition: background-color 0.2s ease;
+    padding: 5px 15px;
+    font-size: 1.4em;
+    }
 
-}
+    .points:hover {
+        background-color: #f2f2f2;
+    }
+    
+    
+    /* Game Buttons Styles */
+    .game-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+        gap: 20px;
+    }
+    
+    .game-buttons button {
+        background-color: var(--blue);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .game-buttons button:hover {
+        background-color: var(--green);
+    }
+    
+    @media (max-width: 768px) {
+        .game-buttons {
+            flex-direction: column;
+        }
+    }
+    
+    /* Warning Message Styles */
+    .warning-message {
+        background-color: #ffcc00;
+        color: #333;
+        text-align: center;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    .warning-message p {
+        margin: 0;
+        font-weight: bold;
+    }
+    
+    /* Materials Page Styles */
+    .materials-main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    .materials-intro h1 {
+        color: #5DADE2;
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+    
+    .materials-intro p {
+        font-size: 1.2em;
+        line-height: 1.6;
+        color: #515A5A;
+    }
+    
+    .material-item {
+        border: 1px dashed #5DADE2;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        transition: all 0.3s ease;
+        text-align: center;
+    }
+    
+    .material-item h2 {
+        color: #2C3E50;
+        font-size: 2em;
+        margin-bottom: 5px;
+    }
+    
+    .material-item p {
+        font-size: 1em;
+        color: #7f8c8d;
+        margin-bottom: 15px;
+    }
+    
+    .material-link {
+        padding: 10px 20px;
+        background-color: #58D68D;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        font-weight: bold;
+    }
+    
+    .material-link:hover, .material-link:focus {
+        background-color: #45B39D;
+        color: white;
+    }
+    
+    @media (max-width: 768px) {
+        .materials-main {
+            padding: 10px;
+        }
+    
+        .material-item {
+            margin: 10px 0;
+        }
+    }
+    
+    /* Footer Styles */
+    footer {
+        background-color: var(--text-dark);
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+    }
+    
+    .footer-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    @media (min-width: 768px) {
+        .footer-section {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    
+        .footer-links, .footer-page-links {
+            flex: 1;
+            display: flex;
+            justify-content: space-around;
+        }
+    
+        .footer-logo {
+            flex: 0;
+        }
+    }
+    
+    .footer-links a, .footer-page-links a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    
+    .footer-links a:hover, .footer-page-links a:hover {
+        text-decoration: underline;
+    }
+    
+    .footer-logo img {
+        max-width: 100px;
+        margin-bottom: 10px;
+    }
 
-.points:hover {
-    background-color: #f2f2f2; /* Couleur de fond au survol pour le compteur de points */
-}
-
-/* Responsive design pour une colonne sur les petits écrans */
+    /* CSS spécifique pour les petits écrans, par exemple les téléphones */
 @media (max-width: 768px) {
     .players-section {
-        grid-template-columns: 1fr;
-    }
-}
-
-.game-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-    gap: 20px;
-}
-
-.game-buttons button {
-    background-color: var(--blue);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.game-buttons button:hover {
-    background-color: var(--green);
-}
-
-/* Assurez-vous que vos boutons ne sont pas trop larges pour éviter qu'ils ne débordent */
-@media (max-width: 768px) {
-    .game-buttons {
+        display: flex;
         flex-direction: column;
-    }
-}
-
-.warning-message {
-    background-color: #ffcc00; /* Couleur de fond jaune pour l'attention */
-    color: #333; /* Couleur du texte */
-    text-align: center; /* Alignement du texte */
-    padding: 10px; /* Espacement interne */
-    border-radius: 5px; /* Bordures arrondies pour un look doux */
-    margin: 10px; /* Marge externe pour séparer des autres éléments */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre légère pour le relief */
-}
-
-.warning-message p {
-    margin: 0; /* Aucune marge supplémentaire pour le paragraphe */
-    font-weight: bold; /* Texte en gras pour l'importance */
-}
-
-.materials-main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.materials-intro h1 {
-    color: #5DADE2; /* Blue color for the title */
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-.materials-intro p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    color: #515A5A; /* Dark grey color for the text */
-}
-
-.material-item {
-    border: 1px dashed #5DADE2; /* Dashed border with the theme blue color */
-    margin: 20px 0;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #f9f9f9; /* Light background for the material sections */
-    transition: all 0.3s ease;
-    text-align: center;
-}
-
-.material-item h2 {
-    color: #2C3E50; /* Darker blue for the section titles */
-    font-size: 2em;
-    margin-bottom: 5px;
-}
-
-.material-item p {
-    font-size: 1em;
-    color: #7f8c8d; /* Soft grey color for the description */
-    margin-bottom: 15px;
-}
-
-.material-link {
-    padding: 10px 20px;
-    background-color: #58D68D; /* Green color for the download links */
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    font-weight: bold;
-}
-
-.material-link:hover, .material-link:focus {
-    background-color: #45B39D; /* Darker green for the hover state */
-    text-decoration: none;
-    color: white;
-}
-
-@media (max-width: 768px) {
-    .materials-main {
-        padding: 10px;
+        align-items: center;
     }
 
-    .material-item {
-        margin: 10px 0;
+    .player {
+        width: 90%; /* Ajuster selon la largeur souhaitée */
+        margin-bottom: 20px; /* Espacement entre les cartes */
+    }
+    .player-image {
+        width: 100px; /* Ajuster selon la taille souhaitée */
+        height: 100px;
+    }
+
+    .player-name, .points-control button, .points {
+        font-size: 1.2em; /* Ajuster la taille de la police */
+    }
+
+    .points-control button {
+        padding: 10px 20px; /* Ajuster le padding */
+    }
+
+    .points {
+        width: 50px; /* Ajuster la largeur */
+    }
+
+    .job {
+        font-size: 1.1em; /* Augmentation de la taille du texte pour l'emploi */
+        margin: 10px 0; /* Espacement avant et après l'emploi */
+    }
+
+    .points-control {
+        flex-direction: column; /* Les boutons en colonne */
+        align-items: center; /* Centrage des boutons */
+    }
+
+    .minus, .plus {
+        font-size: 2em; /* Boutons plus grands */
+        padding: 10px 20px; /* Plus grand champ de toucher */
+        margin: 5px 0; /* Espacement entre les boutons */
+    }
+
+    .game-buttons {
+        flex-direction: column; /* Les boutons de jeu en colonne */
+        align-items: center; /* Centrage des boutons */
+        gap: 15px; /* Espacement entre les boutons */
+    }
+
+    .game-buttons button {
+        font-size: 1.2em; /* Augmentation de la taille de la police pour les boutons */
+        padding: 15px 25px; /* Plus grand champ de toucher */
+    }
+
+    .warning-message {
+        font-size: 1.2em; /* Police plus grande pour le message d'avertissement */
+    }
+    .trailer-button {
+        font-size: 0.6em;
+        padding: 8px 16px; /* Réduction de l'espacement interne */
+        margin-top: 10px; /* Ajustement de la marge */
     }
 }
