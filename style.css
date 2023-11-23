@@ -31,6 +31,7 @@ header {
 }
 
 footer {
+    margin-top: auto;
     background-color: var(--text-dark);
     color: white;
     padding: 1em 0;
@@ -595,5 +596,43 @@ nav {
 
     .material-item {
         margin: 10px 0;
+    }
+}
+@media (max-width: 768px) {
+    /* Ajustements pour la section des joueurs */
+    .players-section {
+        display: block; /* ou 'grid' avec une seule colonne */
+        padding: 1em;
+    }
+
+    .player {
+        margin-bottom: 1em; /* Espace entre les joueurs */
+    }
+
+    /* Boutons de commande de jeu */
+    .game-buttons {
+        flex-direction: column;
+    }
+
+    .game-buttons button {
+        width: 100%; /* Les boutons prennent toute la largeur */
+        margin-bottom: 0.5em; /* Espace entre les boutons */
+    }
+
+    /* Ajustements pour les contrôles des points */
+    .points-control {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    .points-control button {
+        flex: 1; /* Les boutons s'étendent pour remplir l'espace */
+        margin: 0 5px; /* Espace autour des boutons */
+    }
+
+    .points {
+        flex: 2; /* L'affichage des points prend plus d'espace */
+        margin: 0 5px; /* Espace autour de l'affichage des points */
     }
 }
