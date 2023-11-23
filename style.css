@@ -126,6 +126,19 @@ border-radius: 20%;
     .game-image img {
         margin-bottom: 20px;
     }
+    .intro-text, .intro-hover-text {
+        transition: opacity 0.3s ease;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        margin-top: 40px;
+        visibility: hidden;
+        padding-top: 12px;
+        }
 }
 
 /* Banner Styles */
@@ -211,7 +224,7 @@ border-radius: 20%;
     
     .intro-text {
     opacity: 1;
-    visibility: visible;
+    visibility: visible;    
     }
     
     .home-game-intro:hover .intro-text {
