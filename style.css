@@ -7,22 +7,22 @@
     --text-dark: #2C3E50;
 }
 
-* {
-    box-sizing: border-box;
+html, body {
+    height: 100%; /* Assurez-vous que la hauteur de la page est de 100% */
+    margin: 0; /* Réinitialise les marges par défaut */
 }
 
-html, body {
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    width: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
     background-color: white;
     color: var(--text-dark);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Utilisez vh pour la hauteur complète de la fenêtre d'affichage */
+    display: flex; /* Utilisez flexbox pour la disposition de la page */
+    flex-direction: column; /* Les éléments sont empilés verticalement */
+    min-height: 100%; /* La hauteur minimale est la hauteur de la fenêtre du navigateur */
 }
-
 
 header {
     background-color: white;
@@ -31,10 +31,9 @@ header {
 }
 
 footer {
-    margin-top: auto;
     background-color: var(--text-dark);
     color: white;
-    padding: 1em 0;
+    padding: 20px 0;
     text-align: center;
 }
 
@@ -50,25 +49,6 @@ footer {
     .footer-section {
         flex-direction: row; /* Align footer elements horizontally */
         justify-content: space-between; /* Distribute space between elements */
-    }
-}
-
-/* Ajustements pour les écrans plus grands avec requêtes médias */
-@media (min-width: 768px) {
-    .nav-logo img, .nav-github img {
-        width: 4em; /* Taille plus grande pour les écrans plus larges */
-    }
-
-    .nav-links a {
-        font-size: 1em; /* Taille de police standard pour les écrans plus larges */
-    }
-
-    .player {
-        width: calc(25% - 1em); /* Quatre joueurs par ligne sur les écrans plus larges */
-    }
-
-    .game-buttons button {
-        font-size: 1em; /* Taille de police ajustée */
     }
 }
 
@@ -111,31 +91,30 @@ footer {
 
 
 
-/* Styles de la barre de navigation */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5em;
-    background-color: white;
+    padding: 10px 20px;
 }
 
-.nav-logo img, .nav-github img {
-    height: auto;
-    width: 3em; /* Taille adaptée pour mobile */
+.nav-logo img {
+    height: 50px;
 }
 
 .nav-links a {
-    font-size: 0.9em; /* Taille de police plus petite pour les mobiles */
-    padding: 0.5em;
     color: var(--text-dark);
     text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: bold; /* Police en gras pour un impact visuel */
+    transition: all 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:hover, .nav-links a:focus {
     color: var(--blue);
+    transform: translateY(-2px); /* Légère élévation lors du survol */
 }
-
 
 
 .nav-github img {
@@ -377,28 +356,27 @@ nav {
 /* Page 2 */
 
 .players-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1em;
-    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+    gap: 20px; /* Espacement entre les cartes */
+    padding: 40px;
 }
 
+/* Mise en page et style des cartes des joueurs */
 .player {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* Une couleur de fond plus douce */
     border-radius: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
-    padding: 1em;
-    width: calc(50% - 1em); /* Prend en compte l'espacement */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+    padding: 15px; /* Ajustement du padding intérieur */
+    height: auto; /* Hauteur automatique pour s'adapter au contenu */
 }
 
-.player img {
-    width: 5em; /* Taille de l'image ajustée */
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 0.5em;
-}
 .player:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -492,19 +470,24 @@ nav {
     }
 }
 
-/* Boutons de jeu pour les fonctions avancées */
 .game-buttons {
     display: flex;
     justify-content: center;
-    gap: 1em;
-    padding: 1em;
+    align-items: center;
+    margin: 20px 0;
+    gap: 20px;
 }
 
 .game-buttons button {
-    padding: 0.5em 1em;
-    font-size: 0.9em; /* Petite taille de police pour les mobiles */
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
-
 
 .game-buttons button:hover {
     background-color: var(--green);
@@ -518,14 +501,13 @@ nav {
 }
 
 .warning-message {
-    background-color: #ffcc00;
-    color: #333;
-    text-align: center;
-    padding: 0.5em;
-    font-size: 0.9em; /* Petite taille de police pour les mobiles */
-    border-radius: 5px;
-    margin: 0.5em;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #ffcc00; /* Couleur de fond jaune pour l'attention */
+    color: #333; /* Couleur du texte */
+    text-align: center; /* Alignement du texte */
+    padding: 10px; /* Espacement interne */
+    border-radius: 5px; /* Bordures arrondies pour un look doux */
+    margin: 10px; /* Marge externe pour séparer des autres éléments */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre légère pour le relief */
 }
 
 .warning-message p {
@@ -596,43 +578,5 @@ nav {
 
     .material-item {
         margin: 10px 0;
-    }
-}
-@media (max-width: 768px) {
-    /* Ajustements pour la section des joueurs */
-    .players-section {
-        display: block; /* ou 'grid' avec une seule colonne */
-        padding: 1em;
-    }
-
-    .player {
-        margin-bottom: 1em; /* Espace entre les joueurs */
-    }
-
-    /* Boutons de commande de jeu */
-    .game-buttons {
-        flex-direction: column;
-    }
-
-    .game-buttons button {
-        width: 100%; /* Les boutons prennent toute la largeur */
-        margin-bottom: 0.5em; /* Espace entre les boutons */
-    }
-
-    /* Ajustements pour les contrôles des points */
-    .points-control {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 0;
-    }
-
-    .points-control button {
-        flex: 1; /* Les boutons s'étendent pour remplir l'espace */
-        margin: 0 5px; /* Espace autour des boutons */
-    }
-
-    .points {
-        flex: 2; /* L'affichage des points prend plus d'espace */
-        margin: 0 5px; /* Espace autour de l'affichage des points */
     }
 }
